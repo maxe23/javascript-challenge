@@ -31,10 +31,10 @@ function runEnter() {
      tableBody.html("")
 
       // Show filter data table
-    filteredData.forEach(function(sighting) => {
+    filteredData.forEach((sighting) => {
         var row = tableBody.append("tr")
 
-        Object.entries(sighting).forEach(function([key, value]) => {
+        Object.entries(sighting).forEach(([key, value]) => {
             var cell = row.append("td")
             cell.text(value)
         })
