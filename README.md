@@ -1,5 +1,5 @@
 # javascript-challenge
-javascript challenge hw
+javascript challenge hw below is what I followed for part one only
 # JavaScript Homework - JavaScript and DOM Manipulation
 
 ## Background
