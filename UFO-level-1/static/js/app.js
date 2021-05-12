@@ -23,3 +23,6 @@ function runEnter() {
 
       // Get the value property of the input element
       var inputValue = inputElement.property("value")
+
+      // Filter data based on datetime
+    var filteredData = tableData.filter(date => date.datetime === inputValue)
