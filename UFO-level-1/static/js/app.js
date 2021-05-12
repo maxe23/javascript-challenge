@@ -29,3 +29,6 @@ function runEnter() {
 
     // Getting the body tag for the table
     var tableBody = d3.select("tbody")
+    
+     // Build the table in the html
+     tableBody.html("")
