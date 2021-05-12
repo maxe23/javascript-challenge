@@ -1,43 +1,42 @@
+
 // from data.js
 var tableData = data;
 
+// table ref
+var tbody = d3.select('tbody');
+
+// append data to columns and rows
+tableData.forEach((sighting) => {
+    var row = tbody.append('tr');
+
+    Object.entries(sighting).forEach(([key, value]) => {
+        var cell = row.append('td');
+        cell.text(value);
+    })
+});
 // Select the button
-var button = d3.select("#filter-btn")
-var form = d3.select("#form");
-
+var button = d3.select('#filter-btn')
+var form = d3.select('#form');
 // Create event handlers 
-button.on("click", runEnter)
-form.on("submit",runEnter)
-
-// Complete the event handler function for the form
+button.on('click', runEnter);
+form.on('submit', runEnter);
+// Prevent the page from refreshing
 function runEnter() {
+    d3.event.preventDefault();
+    var inputElement = d3.select('#datetime')
+    var inputValue = inputElement.property('value');
 
-      // Prevent the page from refreshing
-      d3.event.preventDefault()
+    var filteredData = data.filter(date => date.datetime === inputValue);
 
-      // Select the input element and get the raw HTML node
-    var inputElement = d3.select("#datetime")
-
-      // Get the value property of the input element
-      var inputValue = inputElement.property("value")
-
-      // Filter data based on datetime
-    var filteredData = tableData.filter(date => date.datetime === inputValue)
-
-    // Getting the body tag for the table
-    var tableBody = d3.select("tbody")
-
-     // Build the table in the html
-     tableBody.html("")
-
-      // Show filter data table
+    var table = d3.select('tbody')
+    table.html('')
+ // Show filter data table
     filteredData.forEach((sighting) => {
-        var row = tableBody.append("tr")
+        var row = tbody.append('tr');
 
         Object.entries(sighting).forEach(([key, value]) => {
-            var cell = row.append("td")
-            cell.text(value)
+            var cell = row.append('td');
+            cell.text(value);
         })
-    })
-
-}
+    });
+};
