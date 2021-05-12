@@ -29,6 +29,17 @@ function runEnter() {
 
     // Getting the body tag for the table
     var tableBody = d3.select("tbody")
-    
+
      // Build the table in the html
      tableBody.html("")
+
+      // Show filter data table
+    filteredData.forEach(function(sighting) {
+        var row = tableBody.append("tr")
+        Object.entries(sighting).forEach(function([key, value]) {
+            var cell = row.append("td")
+            cell.text(value)
+        })
+    })
+
+}
