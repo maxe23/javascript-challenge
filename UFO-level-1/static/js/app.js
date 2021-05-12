@@ -25,7 +25,7 @@ function runEnter() {
     d3.event.preventDefault();
     var inputElement = d3.select('#datetime')
     var inputValue = inputElement.property('value');
-
+//input value info
     var filteredData = data.filter(date => date.datetime === inputValue);
 
     var table = d3.select('tbody')
