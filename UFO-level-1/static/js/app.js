@@ -26,3 +26,6 @@ function runEnter() {
 
       // Filter data based on datetime
     var filteredData = tableData.filter(date => date.datetime === inputValue)
+
+    // Getting the body tag for the table
+    var tableBody = d3.select("tbody")
